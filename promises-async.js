@@ -159,27 +159,3 @@ const updateUserDataPromise = (id, dataUserUpdate) => {
 // }        
 // main();
 
-//************Fetch **************** 
-
-// fetch("https://jsonplaceholder.typicode.com/todos/")
-//     .then (res => {
-//         return res.ok ? res.json() : Promise.reject("Server's error");
-//     })
-//     .then(data => {
-//         console.log(data)
-//     })
-//     .catch(err => {
-//         console.log(err)
-//     })
-
-// fetch через async/await
-async function getQueryRandom() {
-    try {
-        const res = await fetch("https://jsonplaceholder.typicode.com/todos/"); //получили ответ о статусе (ok: true/false)
-        const data = res.ok ? await res.json() : await Promise.reject("Server's error"); //дождались загрузки данных (из body: ...)
-        console.log(data)
-    } catch (err) {
-        console.log(err)
-    }
-}   
-getQueryRandom()
